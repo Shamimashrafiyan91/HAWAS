@@ -50,16 +50,23 @@ To identify significant regions (features) within each significant gene:
    - We used STARE for first two steps to get the affinity file.
    - affinity matrix is named **`Leukemia_sig_regions_TRAP_Affinity.txt`** and you can find it in "data_folder".
    - last part needs significant regions and affinity file from previous step.
-   - significant regions file should be in this format:
-      chr1:203817821-203818036	1
-      chr3:10273780-10274017	2
-      chr15:29310344-29310612	3
-      chr12:117969516-117969677	4
-      chr4:90128451-90128800	5
-      chr1:203463719-203464061	6
-      chr18:59872879-59873228	7
-      chr7:22662626-22662976	8
-      chr1:203351102-203351434	9
+   - The significant regions file should be formatted as shown below. Each line represents a genomic region and its corresponding rank or significance value:
+
+    
+   - **Format Explanation**:
+     - Each line consists of:
+       - The **chromosomal region** in the format `chr<chromosome>:<start>-<end>`.
+       - A **rank or significance value** (integer) separated by a tab.
+
+   - **Example**:
+     - `chr1:203817821-203818036    1`
+       - Chromosome: `1`
+       - Start: `203817821`
+       - End: `203818036`
+       - Rank: `1`
+
+Ensure that the file adheres to this format for downstream analyses.
+
 
 
 ---
