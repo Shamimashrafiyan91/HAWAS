@@ -11,7 +11,7 @@ To identify significant genes for leukemia using multiple methods, including Ran
    - Modify the paths in the script to match your local setup.  
    - Input data is available in the provided **`data_folder`**.  
 
-2. This script will output ~15,000 significant genes based on real RNA-seq data and generate two scatter plots:  
+2. This script uses ~15,000 significant genes from real RNA-seq data and generate two scatter plots:  
    - Fold change comparison between **RF** and **real RNA data**.  
    - Fold change comparison between **CNN** and **real RNA data**.  
 
@@ -23,7 +23,7 @@ To compare leukemia-related genes identified in Step 1 with known leukemia genes
 1. Run the script **`Disgenet_vs_Leukemia_genes_from_RF_and_CNN.R`**.  
    - Input data for DisGeNET leukemia genes is located in **`data_folder`** (downloaded from the old DisGeNET portal).  
 
-2. This script will produce a comparison analysis to evaluate overlaps and unique findings.  
+2. This script will produce a dot plot to evaluate overlaps and unique findings.  
 
 ---
 
@@ -35,7 +35,7 @@ To identify significant regions (features) within each significant gene:
    - This script calculates ISP scores for each region in all significant genes.  
    - The output includes a file for each gene, containing the ISP scores for all its regions.  
 
-2. **Perform T-tests on Regions**  
+2. **Perform T-tests on All Regions from All Genes**  
    - Conduct T-tests on regions from all significant genes using the script **`<T-Test_script_name>.R`** (replace `<T-Test_script_name>` with the actual file name).  
    - This step identifies significant regions across genes based on statistical testing.  
 
