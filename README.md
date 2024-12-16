@@ -47,6 +47,7 @@ To identify significant regions (features) within each significant gene:
 
 ---
 ## Step 4: Identify transcription factors (TFs) associated with the significant regions  
+Before starting I suggest you to visit the PASTAA website and learn running it in detail, I also tried to elaborat everything here
    - We used PASTAA tool, it has three scripts:  PSCM_to_PSEM.cpp, TRAP.cpp, and  PASTAA.cpp.
    - We used STARE for first two steps to get the affinity file.
    - For the second step we need to provid DNA sequence for significant regions.
