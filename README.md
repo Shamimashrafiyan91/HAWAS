@@ -49,17 +49,18 @@ To identify significant regions (features) within each significant gene:
    - We used PASTAA tool, it has three scripts:  PSCM_to_PSEM.cpp, TRAP.cpp, and  PASTAA.cpp.
    - We used STARE for first two steps to get the affinity file.
    - For the second step we need to provid DNA sequence for significant regions.
+      - use **`Finding_DNA_sed_for_sig_regions.R`** to find the DNA sequence for significant regions, dont forget to provide the path to save the DNA seq fasta file.
    - last part needs significant regions and affinity file from previous step.
      - affinity matrix is named **`Leukemia_sig_regions_TRAP_Affinity.txt`** and you can find it in "data_folder".
      - The significant regions file should be formatted as shown below. Each line represents a genomic region and its corresponding rank or significance value:
 
     
-    - **Format Explanation**:
+   - **Format Explanation**:
       - Each line consists of:
         - The **chromosomal region** in the format `chr<chromosome>:<start>-<end>`.
         - A **rank or significance value** (integer) separated by a tab.
 
-     - **Example**:
+   - **Example**:
       - `chr1:203817821-203818036    1`
       - `chr3:10273780-10274017    2`
       - `chr15:29310344-29310612    2`
