@@ -60,10 +60,9 @@ To identify significant regions (features) within each significant gene:
 
    - **Example**:
      - `chr1:203817821-203818036    1`
-       - Chromosome: `1`
-       - Start: `203817821`
-       - End: `203818036`
-       - Rank: `1`
+     - `chr3:10273780-10274017    2`
+     - `chr15:29310344-29310612    2`
+       
 
 Ensure that the file adheres to this format for downstream analyses.
 
