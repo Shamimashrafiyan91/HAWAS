@@ -1,6 +1,6 @@
 # HAWAS: A Novel Framework for Histone-Acetylome-Wide Association Studies  
 
-This repository provides scripts and data for conducting a Histone-Acetylome-Wide Association Study (HAWAS) to identify significant genes and regions related to leukemia. Below is an overview of the analysis pipeline and instructions for using the provided scripts.
+This repository provides scripts and data for conducting a Histone-Acetylome-Wide Association Study (HAWAS) to identify significant genes and regions related to leukemia. Below is an overview and instructions for using the provided scripts.
 
 ---
 
