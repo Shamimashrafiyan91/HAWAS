@@ -54,15 +54,15 @@ To identify significant regions (features) within each significant gene:
      - The significant regions file should be formatted as shown below. Each line represents a genomic region and its corresponding rank or significance value:
 
     
-   - **Format Explanation**:
-     - Each line consists of:
-       - The **chromosomal region** in the format `chr<chromosome>:<start>-<end>`.
-       - A **rank or significance value** (integer) separated by a tab.
+    - **Format Explanation**:
+      - Each line consists of:
+        - The **chromosomal region** in the format `chr<chromosome>:<start>-<end>`.
+        - A **rank or significance value** (integer) separated by a tab.
 
-   - **Example**:
-     - `chr1:203817821-203818036    1`
-     - `chr3:10273780-10274017    2`
-     - `chr15:29310344-29310612    2`
+     - **Example**:
+      - `chr1:203817821-203818036    1`
+      - `chr3:10273780-10274017    2`
+      - `chr15:29310344-29310612    2`
        
 
 Ensure that the file adheres to this format for downstream analyses.
