@@ -36,7 +36,7 @@ To identify significant regions (features) within each significant gene:
    - The output includes a file for each gene, containing the ISP scores for all its regions.  
 
 2. **Perform T-tests on All Regions from All Genes**  
-   - Conduct T-tests on regions from all significant genes using the script **`<T-Test_script_name>.R`** (replace `<T-Test_script_name>` with the actual file name).  
+   - Conduct T-tests on regions from all significant genes using the script **`T_Test_on_ISP_to_find_sig_regions.R`** (replace `<T-Test_script_name>` with the actual file name).  
    - This step identifies significant regions across genes based on statistical testing.  
 
 ---
