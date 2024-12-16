@@ -40,6 +40,11 @@ To identify significant regions (features) within each significant gene:
    - This step performs a T-test on all regions and saves all result regardles of their p-value.  
    - make sure to provide a path to save the result for "T_test_results" parameter.
 
+3. **Perform FDR on result of previous step**
+
+   - Perform FDR  using **`FDR_on_all_regions.R`** on result of previous step and filter the region based on adjusted p-value = 0.05
+   - If there is redundant regions, pick the one with smallest p-value
+
 ---
 
 ## Input Data  
