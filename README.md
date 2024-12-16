@@ -45,6 +45,7 @@ To identify significant regions (features) within each significant gene:
    - Perform FDR  using **`FDR_on_all_regions.R`** on result of previous step and filter the region based on adjusted p-value = 0.05
    - If there is redundant regions, pick the one with smallest p-value
 
+---
 ## Step 4: Identify transcription factors (TFs) associated with the significant regions  
    - We used PASTAA tool, it has three scripts:  PSCM_to_PSEM.cpp, TRAP.cpp, and  PASTAA.cpp.
    - We used STARE for first two steps to get the affinity file.
