@@ -77,13 +77,5 @@ Ensure that the file adheres to this format for downstream analyses.
 ## Input Data  
 All necessary input files are provided in the **`data_folder`** directory. Ensure that paths in the scripts are updated to correctly point to this folder before running the analysis.  
 
----
 
-## Output Overview  
-- **Step 1**: List of ~15,000 significant genes and scatter plots comparing fold changes.  
-- **Step 2**: Analysis of overlaps and unique genes between the identified significant genes and DisGeNET leukemia genes.  
-- **Step 3**: Files with ISP scores for regions and results of T-tests identifying significant regions.  
 
----
-
-This pipeline serves as a comprehensive approach for studying leukemia-related genes and regions using HAWAS. Feel free to explore the scripts and adapt them as needed for your research.
