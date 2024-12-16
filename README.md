@@ -46,7 +46,21 @@ To identify significant regions (features) within each significant gene:
    - If there is redundant regions, pick the one with smallest p-value
 
 ## Step 4: Identify transcription factors (TFs) associated with the significant regions  
-   - 
+   - We used PASTAA tool, it has three scripts:  PSCM_to_PSEM.cpp, TRAP.cpp, and  PASTAA.cpp.
+   - We used STARE for first two steps to get the affinity file.
+   - affinity matrix is named **`Leukemia_sig_regions_TRAP_Affinity.txt`** and you can find it in "data_folder".
+   - last part needs significant regions and affinity file from previous step.
+   - significant regions file should be in this format:
+      chr1:203817821-203818036	1
+      chr3:10273780-10274017	2
+      chr15:29310344-29310612	3
+      chr12:117969516-117969677	4
+      chr4:90128451-90128800	5
+      chr1:203463719-203464061	6
+      chr18:59872879-59873228	7
+      chr7:22662626-22662976	8
+      chr1:203351102-203351434	9
+
 
 ---
 
