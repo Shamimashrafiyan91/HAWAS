@@ -507,7 +507,7 @@ plot_data <- data.frame(
   log2_FC_real = log2_FC_real
 )
 correlation <- cor(log2_FC_CNN, log2_FC_real)
-print(correlation)
+print(correlation) #before removing outliers smaller than -10, greater than +10
 
 library(ggplot2)
 #-------------------------- Plot the scatter plot ---------------------
@@ -564,4 +564,11 @@ ggplot(plot_data, aes(x = log2_FC_real, y = log2_FC_CNN, label = Gene)) +
  # + annotate("text", x = Inf, y = -Inf, label = paste0("Cor:", round(correlation, 3)),
  #           hjust = 1.1, vjust = -1.1, size = 4, color = "black")
 
+# Filter the data to include only points within the desired range
+filtered_data <- plot_data[log2_FC_real >= -10 & log2_FC_real <= 10 & 
+                             log2_FC_CNN >= -10 & log2_FC_CNN <= 10, ]
+
+# Calculate the correlation for the filtered data
+correlation_filtered <- cor(filtered_data$log2_FC_real, filtered_data$log2_FC_CNN)
+print(correlation_filtered)
 
