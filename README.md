@@ -60,9 +60,12 @@ Step 1: Predict Gene Expression Using Pre-trained Models
       i. E_{s,i} = Predict expression of G_{s,*} with model M_i
 
 Step 2: Identify Differentially Expressed Genes Using DESeq2
+
 3. Define design matrix to distinguish control and disease samples
+
 4. Apply DESeq2 on E_{n,z} matrix to identify disease-associated genes
-5. Output: A list of disease-associated genes
+
+Output: A list of disease-associated genes
 
 
 ---
