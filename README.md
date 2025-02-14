@@ -52,6 +52,8 @@ In the second step, differentially expressed genes between control and disease s
 
 ## HAWAS-region Test Algorithm
 
+Here is a description of the algorithm. This text explains what the algorithm does and why it is important. The algorithm itself is shown below in a box-like format using blockquotes.
+
 > ### Input
 > - H3K27ac signal data for control and disease samples
 > - `z` gene models
@@ -62,26 +64,26 @@ In the second step, differentially expressed genes between control and disease s
 > ### Steps
 >
 > 1. Initialize matrix `L` of size `z x m` for region p-values for all `z` genes.
-> 2. For each gene `i` in `{1, 2, ..., z}`:
+> 2. **For each gene `i` in `{1, 2, ..., z}`:**
 >    - Load pre-trained model `M_i`.
 >    - Load gene matrix `G` of size `n x m` for gene `i`.
 >    - Initialize matrix `I` of size `n x m` for ISP values of gene `i`.
 >
->    #### Step 1: Compute ISP Score
->    - For each sample `s` in `{1, ..., n}`:
->      - For each region `r` in `{1, ..., m}`:
+>    ### Step 1: Compute ISP Score
+>    - **For each sample `s` in `{1, ..., n}`:**
+>      - **For each region `r` in `{1, ..., m}`:**
 >        - Compute ISP score for sample `s` and region `r` using model `M_i` (refer to Eq.~\ref{eq:ISP}).
 >        - Store the result in `I_{s,r}`.
 >
->    #### Step 2: Perform t-test
->    - For each region `r` in `{1, ..., m}`:
+>    ### Step 2: Perform t-test
+>    - **For each region `r` in `{1, ..., m}`:**
 >      - Compute t-test p-value from `I_{*,r}` between control and disease groups.
 >      - Store the p-value in `L_{i,m}`.
 >
-> 3. #### Step 3: Apply FDR Correction
+> 3. ### Step 3: Apply FDR Correction
 >    - Apply False Discovery Rate (FDR) correction on matrix `L` to obtain matrix `W`.
 >
-> ### Output
+> ## Output
 > - Matrix `W` with region significance values.
 
 
