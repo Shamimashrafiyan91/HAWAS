@@ -12,7 +12,7 @@ In the second step, differentially expressed genes between control and disease s
 
 ### Algorithm: HAWAS-gene Test
 
-```plaintext
+
 Input: H3K27ac signal data for control and disease samples, z gene models
 Output: A list of disease-associated genes
 
@@ -29,6 +29,7 @@ Step 2: Identify Differentially Expressed Genes Using DESeq2
 4. Apply DESeq2 on E_{n,z} matrix to identify disease-associated genes
 5. Output: A list of disease-associated genes
 
+---------
 
 ## HAWAS-gene Test
 
@@ -40,7 +41,7 @@ In the second step, differentially expressed genes between control and disease s
 
 ### Algorithm: HAWAS-gene Test
 
-```plaintext
+
 Input: H3K27ac signal data for control and disease samples, z gene models
 Output: A list of disease-associated genes
 
@@ -59,7 +60,7 @@ Step 2: Identify Differentially Expressed Genes Using DESeq2
 
 
 ---
-
+# Running the code
 ## Step 1: Identifying Significant Genes  
 To identify significant genes for leukemia using multiple methods, including Random Forest (RF), Convolutional Neural Networks (CNN), and real RNA-seq data:  
 
