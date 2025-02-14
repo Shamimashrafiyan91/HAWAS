@@ -44,12 +44,43 @@ In the second step, differentially expressed genes between control and disease s
 
 ## HAWAS-gene Test
 
-In the first step, pre-trained ML models, such as CRE-RF and Binned-CNN, are used to predict gene expression counts based on H3K27ac signal data from both control and disease samples. For \( z \) genes, there are \( z \) corresponding models, where each model \( M_i \) (\( i \in \{1, 2, \dots, z\} \)) is associated with an input matrix \( G_{n,m} \). Here, \( n \) represents the total number of samples, including both control and disease groups, and \( m \) represents the number of genomic features (regions) of the gene model \( M_i \).
+## HAWAS-region Test
 
-For each gene \( i \), the model produces the predicted expression count and stores it in \( E_{s,i} \). This process is repeated for all \( z \) genes, and the final results are stored in the output matrix \( E_{n,z} \), where \( n \) (rows) corresponds to the input samples, and \( z \) (columns) represents the predicted expression values for all genes.
+While identifying HAWAS genes provides critical insights, understanding which regulatory elements contribute to these expression changes is essential for deciphering disease mechanisms. The HAWAS-region test extends the analysis to the level of gene regulatory regions by quantifying the contribution of individual regions (features) to gene expression using **ISP (Importance Score for Prediction)**. This method identifies regulatory elements whose influence on gene expression differs between healthy and disease conditions.
 
-In the second step, differentially expressed genes between control and disease samples are identified using DESeq2. Specifically, a design matrix is constructed to model the two conditions: control and disease. DESeq2 is then applied to the predicted expression count matrix \( E_{n,z} \). The test returns a list of disease-associated genes based on statistically significant expression changes.
+### Input
+- **Gene Models**: `z` gene models.
+- **Gene Matrix**: For each gene `i`, the input is a matrix `G_{n,m}` representing H3K27ac signal data:
+  - `n` rows: Samples.
+  - `m` columns: Regulatory regions.
 
+### Steps
+
+1. **Compute ISP Score**:
+   - For each gene `i`:
+     - For each sample `s` in `{1, 2, ..., n}`:
+       - For each region `r` in `{1, 2, ..., m}`:
+         - Compute the ISP score for sample `s` and region `r` using the ISP formula (refer to Eq.~\ref{eq:ISP}).
+         - Store the result in matrix `I_{s,r}`.
+   - **Note**: For simplicity, it is assumed that each gene `i` has the same number of regions `m`.
+
+2. **Perform t-test**:
+   - For each gene `i`:
+     - For each region `r` in `{1, 2, ..., m}`:
+       - Perform a two-sided t-test between the control and disease groups using the ISP scores from `I_{*,r}`.
+       - Store the resulting p-value in `L_{i,m}`.
+   - **Note**: A t-test is chosen because it is well-suited for comparing continuous values (e.g., region importance scores).
+
+3. **Apply FDR Correction**:
+   - After processing all `z` genes, there are `z x m` p-values stored in list `L`.
+   - Apply False Discovery Rate (FDR) correction to adjust for multiple testing (refer to [Benjamini & Hochberg, 1995](#)).
+   - The output is a list `W` containing significant regions with their adjusted p-values.
+
+### Output
+- **List `W`**: Contains significant regulatory regions with their adjusted p-values.
+
+### References
+- Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. *Journal of the Royal Statistical Society: Series B (Methodological)*, 57(1), 289–300.
 ## HAWAS-region Test Algorithm
 > ### Input
 > - H3K27ac signal data for control and disease samples
