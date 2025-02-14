@@ -73,7 +73,7 @@ Output: A list of disease-associated genes
 
 
 ---
-# Running the code
+# scripts for Chronic Lymphocytic Leukemia (CLL) data
 ## Step 1: Identifying Significant Genes  
 To identify significant genes for leukemia using multiple methods, including Random Forest (RF), Convolutional Neural Networks (CNN), and real RNA-seq data:  
 
