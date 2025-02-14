@@ -77,7 +77,7 @@ While identifying HAWAS genes provides critical insights, understanding which re
 ### Output
 - **List `W`**: Contains significant regulatory regions with their adjusted p-values.
 
-### References
+#### References
 - Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. *Journal of the Royal Statistical Society: Series B (Methodological)*, 57(1), 289–300.
 
 ---
