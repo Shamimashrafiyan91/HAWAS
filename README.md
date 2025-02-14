@@ -1,6 +1,11 @@
 # HAWAS: A Novel Framework for Histone-Acetylome-Wide Association Studies  
 
-The HAWAS-gene approach leverages ML-based predictions of gene expression to identify genes with significant alterations between healthy and disease states. By comparing the predicted expression profiles of thousands of genes, this approach enables the discovery of potential disease-associated genes driven by epigenetic regulation.
+The HAWAS-gene approach leverages machine learning (ML) models to predict gene expression from epigenetic signals, enabling the identification of genes and genomic regions associated with disease. It systematically compares predicted gene expression profiles between control and disease samples to pinpoint significant epigenetic regulatory changes.
+
+HAWAS consists of two main components:
+
+- **HAWAS-gene test** – Identifies disease-associated genes based on predicted gene expression.
+- **HAWAS-region test** – Identifies significant regulatory regions within disease-associated genes.
 
 ## HAWAS-gene Test
 
