@@ -15,6 +15,7 @@ For each gene \( i \), the model produces the predicted expression count and sto
 
 In the second step, differentially expressed genes between control and disease samples are identified using DESeq2. Specifically, a design matrix is constructed to model the two conditions: control and disease. DESeq2 is then applied to the predicted expression count matrix \( E_{n,z} \). The test returns a list of disease-associated genes based on statistically significant expression changes.
 
+# HAWAS-gene Test Algorithm
 > ## Input
 > - H3K27ac signal data for control and disease samples
 > - `z` gene models
