@@ -24,6 +24,7 @@ In the second step, differentially expressed genes between control and disease s
   - For each sample **𝑠** in **𝐺𝑛,𝑚**:
     - Compute predicted expression **𝐸𝑠,𝑖 = 𝑀𝑖(𝐺𝑠, ∗)**.
     - Store all predictions in matrix **𝐸𝑛×𝑧**.
+      
 2️⃣ **Identify Differentially Expressed Genes Using DESeq2**
 - Define design matrix to distinguish control vs. disease samples.
 - Apply DESeq2 on **𝐸𝑛,𝑧** to detect differentially expressed genes.
