@@ -11,10 +11,6 @@ HAWAS consists of two main components:
 
 Histone modifications, particularly H3K27ac, play a crucial role in gene regulation and are closely associated with active transcription. The HAWAS-gene approach leverages machine learning (ML)-based predictions of gene expression to identify genes with significant alterations between healthy and disease states. By comparing the predicted expression profiles of thousands of genes, this approach enables the discovery of potential disease-associated genes driven by epigenetic regulation.
 
-## Overview
-
-HAWAS-gene was applied to detect differentially expressed disease genes using ML-predicted expression values and statistical analysis. The process involves two main steps:
-
 ### Step 1: Gene Expression Prediction
 Pre-trained ML models, such as CRE-RF and Binned-CNN, are used to predict gene expression counts based on H3K27ac signal data from both control and disease samples. For \( z \) genes, there are \( z \) corresponding models, where each model \( M_i \) (\( i \in \{1, 2, \dots, z\} \)) is associated with an input matrix \( G_{n,m} \). Here:
 - \( n \) represents the total number of samples, including both control and disease groups.
@@ -30,7 +26,7 @@ Differentially expressed genes between control and disease samples are identifie
 - DESeq2 is applied to the predicted expression count matrix \( E_{n,z} \).
 - The test returns a list of disease-associated genes based on statistically significant expression changes.
 
-## References
+### References
 - Love, M.I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biology*, 15(12), 550. https://doi.org/10.1186/s13059-014-0550-8
 ---
 
