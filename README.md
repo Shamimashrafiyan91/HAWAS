@@ -29,6 +29,7 @@ In the second step, differentially expressed genes between control and disease s
 - Define design matrix to distinguish control vs. disease samples.
 - Apply DESeq2 on **𝐸𝑛,𝑧** to detect differentially expressed genes.
 - Filter results based on statistical significance (adjusted p-value threshold).
+
 ✅ **Final Output**: A list of significantly altered genes in disease vs. control.
 
 ---
