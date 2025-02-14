@@ -42,8 +42,6 @@ In the second step, differentially expressed genes between control and disease s
 ---
 
 
-## HAWAS-gene Test
-
 ## HAWAS-region Test
 
 While identifying HAWAS genes provides critical insights, understanding which regulatory elements contribute to these expression changes is essential for deciphering disease mechanisms. The HAWAS-region test extends the analysis to the level of gene regulatory regions by quantifying the contribution of individual regions (features) to gene expression using **ISP (Importance Score for Prediction)**. This method identifies regulatory elements whose influence on gene expression differs between healthy and disease conditions.
@@ -81,39 +79,6 @@ While identifying HAWAS genes provides critical insights, understanding which re
 
 ### References
 - Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. *Journal of the Royal Statistical Society: Series B (Methodological)*, 57(1), 289–300.
-## HAWAS-region Test Algorithm
-> ### Input
-> - H3K27ac signal data for control and disease samples
-> - `z` gene models
->
-> ### Output
-> - Matrix `W` of size `z x m` with region significance values
->
-> ### Steps
->
-> 1. Initialize matrix `L` of size `z x m` for region p-values for all `z` genes.
-> 2. **For each gene `i` in `{1, 2, ..., z}`:**
->    - Load pre-trained model `M_i`.
->    - Load gene matrix `G` of size `n x m` for gene `i`.
->    - Initialize matrix `I` of size `n x m` for ISP values of gene `i`.
->
->    ### Step 1: Compute ISP Score
->    - **For each sample `s` in `{1, ..., n}`:**
->      - **For each region `r` in `{1, ..., m}`:**
->        - Compute ISP score for sample `s` and region `r` using model `M_i` (refer to Eq.~\ref{eq:ISP}).
->        - Store the result in `I_{s,r}`.
->
->    ### Step 2: Perform t-test
->    - **For each region `r` in `{1, ..., m}`:**
->      - Compute t-test p-value from `I_{*,r}` between control and disease groups.
->      - Store the p-value in `L_{i,m}`.
->
-> 3. ### Step 3: Apply FDR Correction
->    - Apply False Discovery Rate (FDR) correction on matrix `L` to obtain matrix `W`.
->
-> ### Output
-> - Matrix `W` with region significance values.
-
 
 ---
 # Case study: Chronic Lymphocytic Leukemia (CLL) data
