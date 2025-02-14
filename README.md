@@ -1,6 +1,61 @@
 # HAWAS: A Novel Framework for Histone-Acetylome-Wide Association Studies  
 
+The HAWAS-gene approach leverages ML-based predictions of gene expression to identify genes with significant alterations between healthy and disease states. By comparing the predicted expression profiles of thousands of genes, this approach enables the discovery of potential disease-associated genes driven by epigenetic regulation.
 
+## HAWAS-gene Test
+
+In the first step, pre-trained ML models, such as CRE-RF and Binned-CNN, are used to predict gene expression counts based on H3K27ac signal data from both control and disease samples. For \( z \) genes, there are \( z \) corresponding models, where each model \( M_i \) (\( i \in \{1, 2, \dots, z\} \)) is associated with an input matrix \( G_{n,m} \). Here, \( n \) represents the total number of samples, including both control and disease groups, and \( m \) represents the number of genomic features (regions) of the gene model \( M_i \).
+
+For each gene \( i \), the model produces the predicted expression count and stores it in \( E_{s,i} \). This process is repeated for all \( z \) genes, and the final results are stored in the output matrix \( E_{n,z} \), where \( n \) (rows) corresponds to the input samples, and \( z \) (columns) represents the predicted expression values for all genes.
+
+In the second step, differentially expressed genes between control and disease samples are identified using DESeq2. Specifically, a design matrix is constructed to model the two conditions: control and disease. DESeq2 is then applied to the predicted expression count matrix \( E_{n,z} \). The test returns a list of disease-associated genes based on statistically significant expression changes.
+
+### Algorithm: HAWAS-gene Test
+
+```plaintext
+Input: H3K27ac signal data for control and disease samples, z gene models
+Output: A list of disease-associated genes
+
+Step 1: Predict Gene Expression Using Pre-trained Models
+1. Initialize matrix E^{n × z} for storing predicted expression values
+2. For each gene i in {1,2,...,z}:
+   a. Load pre-trained model M_i
+   b. Load gene matrix G^{n × m} for gene i
+   c. For each sample s in {1,2,...,n} in G_{s,m}:
+      i. E_{s,i} = Predict expression of G_{s,*} with model M_i
+
+Step 2: Identify Differentially Expressed Genes Using DESeq2
+3. Define design matrix to distinguish control and disease samples
+4. Apply DESeq2 on E_{n,z} matrix to identify disease-associated genes
+5. Output: A list of disease-associated genes
+
+
+## HAWAS-gene Test
+
+In the first step, pre-trained ML models, such as CRE-RF and Binned-CNN, are used to predict gene expression counts based on H3K27ac signal data from both control and disease samples. For \( z \) genes, there are \( z \) corresponding models, where each model \( M_i \) (\( i \in \{1, 2, \dots, z\} \)) is associated with an input matrix \( G_{n,m} \). Here, \( n \) represents the total number of samples, including both control and disease groups, and \( m \) represents the number of genomic features (regions) of the gene model \( M_i \).
+
+For each gene \( i \), the model produces the predicted expression count and stores it in \( E_{s,i} \). This process is repeated for all \( z \) genes, and the final results are stored in the output matrix \( E_{n,z} \), where \( n \) (rows) corresponds to the input samples, and \( z \) (columns) represents the predicted expression values for all genes.
+
+In the second step, differentially expressed genes between control and disease samples are identified using DESeq2. Specifically, a design matrix is constructed to model the two conditions: control and disease. DESeq2 is then applied to the predicted expression count matrix \( E_{n,z} \). The test returns a list of disease-associated genes based on statistically significant expression changes.
+
+### Algorithm: HAWAS-gene Test
+
+```plaintext
+Input: H3K27ac signal data for control and disease samples, z gene models
+Output: A list of disease-associated genes
+
+Step 1: Predict Gene Expression Using Pre-trained Models
+1. Initialize matrix E^{n × z} for storing predicted expression values
+2. For each gene i in {1,2,...,z}:
+   a. Load pre-trained model M_i
+   b. Load gene matrix G^{n × m} for gene i
+   c. For each sample s in {1,2,...,n} in G_{s,m}:
+      i. E_{s,i} = Predict expression of G_{s,*} with model M_i
+
+Step 2: Identify Differentially Expressed Genes Using DESeq2
+3. Define design matrix to distinguish control and disease samples
+4. Apply DESeq2 on E_{n,z} matrix to identify disease-associated genes
+5. Output: A list of disease-associated genes
 
 
 ---
