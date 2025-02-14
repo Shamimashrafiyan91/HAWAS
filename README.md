@@ -14,8 +14,8 @@ In the first step, pre-trained ML models, such as CRE-RF and Binned-CNN, are use
 For each gene \( i \), the model produces the predicted expression count and stores it in \( E_{s,i} \). This process is repeated for all \( z \) genes, and the final results are stored in the output matrix \( E_{n,z} \), where \( n \) (rows) corresponds to the input samples, and \( z \) (columns) represents the predicted expression values for all genes.
 
 In the second step, differentially expressed genes between control and disease samples are identified using DESeq2. Specifically, a design matrix is constructed to model the two conditions: control and disease. DESeq2 is then applied to the predicted expression count matrix \( E_{n,z} \). The test returns a list of disease-associated genes based on statistically significant expression changes.
-<div style="border: 1px solid #ddd; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
 
+<div style="border: 1px solid #ddd; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
 ## Input
 - H3K27ac signal data for control and disease samples
 - `z` gene models
@@ -36,8 +36,7 @@ In the second step, differentially expressed genes between control and disease s
 2. Apply DESeq2 on the `E_{n,z}` matrix to identify disease-associated genes.
 
 ## Output
-- A list of disease-associated genes.
-
+- A list of disease-associated genes
 </div>
 
 ---
