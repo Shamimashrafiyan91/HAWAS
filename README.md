@@ -14,28 +14,31 @@ In the first step, pre-trained ML models, such as CRE-RF and Binned-CNN, are use
 For each gene \( i \), the model produces the predicted expression count and stores it in \( E_{s,i} \). This process is repeated for all \( z \) genes, and the final results are stored in the output matrix \( E_{n,z} \), where \( n \) (rows) corresponds to the input samples, and \( z \) (columns) represents the predicted expression values for all genes.
 
 In the second step, differentially expressed genes between control and disease samples are identified using DESeq2. Specifically, a design matrix is constructed to model the two conditions: control and disease. DESeq2 is then applied to the predicted expression count matrix \( E_{n,z} \). The test returns a list of disease-associated genes based on statistically significant expression changes.
-### Algorithm: HAWAS-Gene Test
-#### Input:
-- H3K27ac signal data for control and disease samples
-- 𝑧 gene-specific ML models
-#### Output:
-- A list of differentially expressed genes associated with the disease
-#### Steps:
-1️⃣ **Predict Gene Expression Using Pre-trained Models**
-- Initialize matrix **𝐸𝑛×𝑧** for predicted expression values.
-- For each gene **𝑖**:
-  - Load pre-trained model **𝑀𝑖**.
-  - Load input matrix **𝐺𝑛×𝑚** (samples × features).
-  - For each sample **𝑠** in **𝐺𝑛,𝑚**:
-    - Compute predicted expression **𝐸𝑠,𝑖 = 𝑀𝑖(𝐺𝑠, ∗)**.
-    - Store all predictions in matrix **𝐸𝑛×𝑧**.
-      
-2️⃣ **Identify Differentially Expressed Genes Using DESeq2**
-- Define design matrix to distinguish control vs. disease samples.
-- Apply DESeq2 on **𝐸𝑛,𝑧** to detect differentially expressed genes.
-- Filter results based on statistical significance (adjusted p-value threshold).
+<div style="border: 1px solid #ddd; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
 
-✅ **Final Output**: A list of significantly altered genes in disease vs. control.
+## Input
+- H3K27ac signal data for control and disease samples
+- `z` gene models
+
+## Output
+- A list of disease-associated genes
+
+## Step 1: Predict Gene Expression Using Pre-trained Models
+1. Initialize matrix `E` of size `n x z` for storing predicted expression values.
+2. For each gene `i` in `{1, 2, ..., z}`:
+   - Load pre-trained model `M_i`.
+   - Load gene matrix `G` of size `n x m` for gene `i`.
+   - For each sample `s` in `{1, 2, ..., n}` in `G_{s,m}`:
+     - Predict expression of `G_{s,*}` using model `M_i` and store the result in `E_{s,i}`.
+
+## Step 2: Identify Differentially Expressed Genes Using DESeq2
+1. Define a design matrix to distinguish control and disease samples.
+2. Apply DESeq2 on the `E_{n,z}` matrix to identify disease-associated genes.
+
+## Output
+- A list of disease-associated genes.
+
+</div>
 
 ---
 
