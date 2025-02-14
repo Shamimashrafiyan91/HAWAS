@@ -54,9 +54,13 @@ Output: A list of disease-associated genes
 Step 1: Predict Gene Expression Using Pre-trained Models
 1. Initialize matrix E^{n × z} for storing predicted expression values
 2. For each gene i in {1,2,...,z}:
+
    a. Load pre-trained model M_i
+
    b. Load gene matrix G^{n × m} for gene i
+
    c. For each sample s in {1,2,...,n} in G_{s,m}:
+
       i. E_{s,i} = Predict expression of G_{s,*} with model M_i
 
 Step 2: Identify Differentially Expressed Genes Using DESeq2
