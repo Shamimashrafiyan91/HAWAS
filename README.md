@@ -15,29 +15,28 @@ For each gene \( i \), the model produces the predicted expression count and sto
 
 In the second step, differentially expressed genes between control and disease samples are identified using DESeq2. Specifically, a design matrix is constructed to model the two conditions: control and disease. DESeq2 is then applied to the predicted expression count matrix \( E_{n,z} \). The test returns a list of disease-associated genes based on statistically significant expression changes.
 
-<div style="border: 1px solid #ddd; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
-## Input
-- H3K27ac signal data for control and disease samples
-- `z` gene models
+> ## Input
+> - H3K27ac signal data for control and disease samples
+> - `z` gene models
+>
+> ## Output
+> - A list of disease-associated genes
+>
+> ## Step 1: Predict Gene Expression Using Pre-trained Models
+> 1. Initialize matrix `E` of size `n x z` for storing predicted expression values.
+> 2. For each gene `i` in `{1, 2, ..., z}`:
+>    - Load pre-trained model `M_i`.
+>    - Load gene matrix `G` of size `n x m` for gene `i`.
+>    - For each sample `s` in `{1, 2, ..., n}` in `G_{s,m}`:
+>      - Predict expression of `G_{s,*}` using model `M_i` and store the result in `E_{s,i}`.
+>
+> ## Step 2: Identify Differentially Expressed Genes Using DESeq2
+> 1. Define a design matrix to distinguish control and disease samples.
+> 2. Apply DESeq2 on the `E_{n,z}` matrix to identify disease-associated genes.
+>
+> ## Output
+> - A list of disease-associated genes.
 
-## Output
-- A list of disease-associated genes
-
-## Step 1: Predict Gene Expression Using Pre-trained Models
-1. Initialize matrix `E` of size `n x z` for storing predicted expression values.
-2. For each gene `i` in `{1, 2, ..., z}`:
-   - Load pre-trained model `M_i`.
-   - Load gene matrix `G` of size `n x m` for gene `i`.
-   - For each sample `s` in `{1, 2, ..., n}` in `G_{s,m}`:
-     - Predict expression of `G_{s,*}` using model `M_i` and store the result in `E_{s,i}`.
-
-## Step 2: Identify Differentially Expressed Genes Using DESeq2
-1. Define a design matrix to distinguish control and disease samples.
-2. Apply DESeq2 on the `E_{n,z}` matrix to identify disease-associated genes.
-
-## Output
-- A list of disease-associated genes
-</div>
 
 ---
 
