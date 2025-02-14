@@ -80,12 +80,13 @@ In the second step, differentially expressed genes between control and disease s
 > 3. ### Step 3: Apply FDR Correction
 >    - Apply False Discovery Rate (FDR) correction on matrix `L` to obtain matrix `W`.
 >
-> ## Output
+> ### Output
 > - Matrix `W` with region significance values.
 
 
 ---
-# scripts for Chronic Lymphocytic Leukemia (CLL) data
+# Case study: Chronic Lymphocytic Leukemia (CLL) data
+
 ## Step 1: Identifying Significant Genes  
 To identify significant genes for leukemia using multiple methods, including Random Forest (RF), Convolutional Neural Networks (CNN), and real RNA-seq data:  
 
