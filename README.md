@@ -11,8 +11,6 @@ HAWAS consists of two main components:
 
 Histone modifications, particularly H3K27ac, play a crucial role in gene regulation and are closely associated with active transcription. The HAWAS-gene approach leverages machine learning (ML)-based predictions of gene expression to identify genes with significant alterations between healthy and disease states. By comparing the predicted expression profiles of thousands of genes, this approach enables the discovery of potential disease-associated genes driven by epigenetic regulation.
 
-# HAWAS-gene Test Algorithm
-
 ### Input:
 - H3K27ac signal data for control and disease samples
 - `z` gene models
