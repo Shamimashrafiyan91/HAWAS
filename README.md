@@ -70,7 +70,7 @@ While identifying HAWAS genes provides critical insights, understanding which re
 
 3. **Apply FDR Correction**:
    - After processing all `z` genes, there are `z x m` p-values stored in list `L`.
-   - Apply False Discovery Rate (FDR) correction to adjust for multiple testing (refer to [Benjamini & Hochberg, 1995](#)).
+   - Apply False Discovery Rate (FDR) correction to adjust for multiple testing ([Benjamini & Hochberg, 1995](#)).
    - The output is a list `W` containing significant regions with their adjusted p-values.
 
 ### Output
