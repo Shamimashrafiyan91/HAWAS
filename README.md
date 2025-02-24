@@ -7,7 +7,7 @@ HAWAS consists of two main components:
 - **HAWAS-gene test** – Identifies disease-associated genes based on predicted gene expression.
 - **HAWAS-region test** – Identifies significant regulatory regions within disease-associated genes.
 
-# HAWAS-gene Test
+## HAWAS-gene Test
 
 Histone modifications, particularly H3K27ac, play a crucial role in gene regulation and are closely associated with active transcription. The HAWAS-gene approach leverages machine learning (ML)-based predictions of gene expression to identify genes with significant alterations between healthy and disease states. By comparing the predicted expression profiles of thousands of genes, this approach enables the discovery of potential disease-associated genes driven by epigenetic regulation.
 
@@ -16,9 +16,6 @@ Histone modifications, particularly H3K27ac, play a crucial role in gene regulat
 ### Input:
 - H3K27ac signal data for control and disease samples
 - `z` gene models
-
-### Output:
-- A list of disease-associated genes
 
 ### Algorithm:
 
@@ -38,7 +35,7 @@ Histone modifications, particularly H3K27ac, play a crucial role in gene regulat
 - A list of disease-associated genes
 
 
-### References
+#### References
 - Love, M.I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biology*, 15(12), 550. https://doi.org/10.1186/s13059-014-0550-8
 ---
 
