@@ -18,16 +18,16 @@ Histone modifications, particularly H3K27ac, play a crucial role in gene regulat
 ### Algorithm:
 
 1. **Predict Gene Expression Using Pre-trained Models**:
-1. Initialize matrix `E^{n × z}` for storing predicted expression values.
-2. For each gene `i` in `{1,2,...,z}`:
-   - Load pre-trained model `M_i`.
-   - Load gene matrix `G^{n × m}` for gene `i`.
-   - For each sample `s` in `{1,2,...,n}` in `G_{s,m}`:
-     - Predict expression of `G_{s,*}` using model `M_i` and store in `E_{s,i}`.
+    Initialize matrix `E^{n × z}` for storing predicted expression values.
+    For each gene `i` in `{1,2,...,z}`:
+      - Load pre-trained model `M_i`.
+      - Load gene matrix `G^{n × m}` for gene `i`.
+      - For each sample `s` in `{1,2,...,n}` in `G_{s,m}`:
+        - Predict expression of `G_{s,*}` using model `M_i` and store in `E_{s,i}`.
 
 2. **Identify Differentially Expressed Genes Using DESeq2**:
-1. Define a design matrix to distinguish control and disease samples.
-2. Apply DESeq2 on `E_{n,z}` matrix to identify disease-associated genes.
+   Define a design matrix to distinguish control and disease samples.
+   Apply DESeq2 on `E_{n,z}` matrix to identify disease-associated genes.
 
 ### Output:
 - A list of disease-associated genes
