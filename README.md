@@ -13,8 +13,8 @@ Histone modifications, particularly H3K27ac, play a crucial role in gene regulat
 
 ### Input:
 - **Gene Matrix**: For each gene `i`, the input is a matrix `G_{n,m}` representing H3K27ac signal data:
- - `n` rows: Samples.
-  - `m` columns: Regulatory regions.
+   - `n` rows: Samples.
+   - `m` columns: Regulatory regions.
 - **Gene Models**: `z` gene models.
 
 ### Algorithm:
