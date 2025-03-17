@@ -143,7 +143,7 @@ Before starting I suggest you to visit the PASTAA website and learn running it i
    - **Example**:
       - `chr1:203817821-203818036    1`
       - `chr3:10273780-10274017    2`
-      - `chr15:29310344-29310612    2`
+      - `chr15:29310344-29310612    3`
        
 
 Ensure that the file adheres to this format for downstream analyses.
