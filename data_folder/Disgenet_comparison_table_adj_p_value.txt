@@ -1,0 +1,24 @@
+"Disease" "Gene_set" "adj_p_value_log10"
+"1" "CLL" "real_adj" 9.9977661149704
+"2" "CLL" "RF_adj" 7.67935874268192
+"3" "CLL" "CNN_adj" 9.99980917012885
+"4" "CLL" "ABC_adj" 6.35518002670697
+"5" "CLL" "Nearest_adj" 9.99999999994382
+"6" "Acute Myeloid Leukemia (AML-M2)" "real_adj" 1.22950504009772
+"7" "Acute Myeloid Leukemia (AML-M2)" "RF_adj" 0.41604009791186
+"8" "Acute Myeloid Leukemia (AML-M2)" "CNN_adj" 0.631906712441609
+"9" "Acute Myeloid Leukemia (AML-M2)" "ABC_adj" 0.906145857595628
+"10" "Acute Myeloid Leukemia (AML-M2)" "Nearest_adj" 4.35815165276316
+"11" "Cytogenetically normal acute myeloid leukemia" "real_adj" 0.975385232975439
+"12" "Cytogenetically normal acute myeloid leukemia" "RF_adj" 1.11261747682817
+"13" "Cytogenetically normal acute myeloid leukemia" "CNN_adj" 1.29045580298322
+"14" "Cytogenetically normal acute myeloid leukemia" "ABC_adj" 0.44953071860116
+"15" "Cytogenetically normal acute myeloid leukemia" "Nearest_adj" 2.22620015804681
+"16" "Treatment related acute myeloid leukaemia" "real_adj" 2.10666336826736
+"17" "Treatment related acute myeloid leukaemia" "RF_adj" 2.37062113229765
+"18" "Treatment related acute myeloid leukaemia" "CNN_adj" 1.46156950159963
+"19" "Treatment related acute myeloid leukaemia" "Nearest_adj" 1.6454446678621
+"20" "Adult Acute Myeloblastic Leukemia" "real_adj" 0.690799567347315
+"21" "Adult Acute Myeloblastic Leukemia" "RF_adj" 0.411393416768346
+"22" "Adult Acute Myeloblastic Leukemia" "CNN_adj" 1.64492655347332
+"23" "Adult Acute Myeloblastic Leukemia" "Nearest_adj" 0.932831788393423
