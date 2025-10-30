@@ -9,7 +9,7 @@ library(readxl)
 library(jsonlite)
 
 # Define the file path
-file_path <- "/Users/shamim/Desktop/PhD/ML_project/ml_scripts/IHEC_Project/All_IHEC_result/1MB/CLL_genes_Harmonizome.txt"  # Replace with your actual file path
+file_path <- "/Users/shamim/Desktop/PhD/ML_project/ml_scripts/IHEC_Project/All_IHEC_result/1MB/CLL_genes_Harmonizome.txt"  
 
 # Read the file as a string
 json_text <- paste(readLines(file_path), collapse = "")
@@ -182,7 +182,7 @@ ggplot(A, aes(x = List, y = Disease, size = Enrichment, color = Enrichment)) +
 # 
 # 
 # # Define the file path
-# file_path <- "/Users/shamim/Desktop/PhD/ML_project/ml_scripts/IHEC_Project/All_IHEC_result/1MB/CLL_genes_Harmonizome.txt"  # Replace with your actual file path
+# file_path <- "/Users/shamim/Desktop/PhD/ML_project/ml_scripts/IHEC_Project/All_IHEC_result/1MB/CLL_genes_Harmonizome.txt"  
 # 
 # # Read the file as a string
 # json_text <- paste(readLines(file_path), collapse = "")
