@@ -56,7 +56,7 @@ all_genes <-  readLines("/Users/shamim/Desktop/PhD/ML_project/ml_scripts/IHEC_Pr
 
 
 
-# Assuming all your data reading steps are correct.
+
 
 # Calculate the unique sets for CNN and RF
 common_CNN_RF <- intersect(RF_genes, CNN_genes)
