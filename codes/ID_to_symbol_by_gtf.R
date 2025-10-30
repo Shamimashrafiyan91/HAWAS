@@ -1,7 +1,7 @@
 #converting ID Gene to Symbol by gtf file
 
 Gene_ID <- readLines("/Users/shamim/Desktop/PhD/ML_project/ml_scripts/IHEC_Project/All_IHEC_result/1MB/Luekemia_Apog_Aplication/New_running_after_correctin_CNN/sig_genes_CNN_corrected_scaled.txt")
-# Replace 'annotation.gtf.gz' with the path to your GTF file
+
 annotation <- "/Users/shamim/Desktop/PhD/ML_project/ml_scripts/IHEC_Project/All_IHEC_result/1MB/gencode.v38.annotation.gtf"
 
 # Read the GTF file line by line
